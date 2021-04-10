@@ -1,0 +1,26 @@
+local ch [ /interface wireless get 0 disabled] 
+:if ( $ch = yes ) do={
+[   
+/interface wireless enable 0 
+
+] }
+
+:if ($ch = no ) do={
+[
+/interface wireless disable 0 
+]
+
+}
+
+:global stan [/interface wireless get 0 disabled] 
+
+:local wl5 "wlan2-5Ghz"
+
+
+:if ($stan = yes) do={
+[/interface wireless disable [ find name="$wl5"]  ]
+} 
+
+:if ($stan = no ) do={ [/interface wireless enable [find name="$wl5"] ] }
+
+

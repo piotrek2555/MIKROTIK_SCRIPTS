@@ -1,0 +1,23 @@
+/system script add name="NAT" source={
+
+
+
+:local on;
+:global time [/system clock get time]
+:local wylacz;
+/ip firewall nat
+:set on [:put [enable [ find action="masquerade" ]]]
+:set wylacz [:put [disable [ find action="masquerade" ]]]
+:if ($time > 22:30) do={ ($wylacz &&  :log info "nat off" )}
+:if ($time > 00:01:00) do={ ($wylacz &&  :log info "nat off") }
+:if ($time > 07:00) do={ ($on && :log info "nat on") }
+}
+
+
+:delay 1s 
+
+{
+ :global script [ /system script get [find name="NAT"] name]
+ :if ($script = $script) do={:put [/system scheduler add name="$script NAT" interval="00:25:00" on-event=" 
+/system script run $script"]}
+} 

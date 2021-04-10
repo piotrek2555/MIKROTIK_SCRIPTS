@@ -1,0 +1,20 @@
+{
+
+#ustawienia
+
+:local username "wpisz username"
+:local email "wpisz email"
+:local haslo "wpisz haslo"
+
+
+:global days [/system clock get date] 
+:global time [/system clock get time] 
+
+:global dev [/system resource get board-name] 
+
+:global ver [ /system resource get version] 
+
+:do {
+ [ /system backup save dont-encrypt=yes name="bck-$dev-$time" ]
+:delay 10s; 
+[/tool e-mail send subject="bck-$dev-$days"  to="$email"  file="bck-$dev-$time.backup" password="$haslo" user="$username" body="backup-konfiguracji urzadzenia:$dev dnia:$days . Wersja : $ver" ] } }

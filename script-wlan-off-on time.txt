@@ -1,0 +1,23 @@
+/interface wireless
+
+:foreach i in=[  find interface-type!=virtual ] do={
+
+  :global zeg [/system clock get time ] 
+
+
+
+:local check [get $i disabled] 
+:local start 06:00 ;
+:local stop 05:30 ;
+
+:if (($check = yes  ) && ( $start < $zeg  ) && ( 00:01 < $zeg )  ) do={
+[ /interface wireless enable $i]
+
+
+}
+
+
+:if (($check = no ) && ($stop < $zeg )  && ( $start > $zeg )  ) do={
+[ /interface wireless disable $i ] 
+
+} }

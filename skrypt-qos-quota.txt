@@ -1,0 +1,9 @@
+
+/system script
+ add name=Limit-test source={
+:local traf; 
+/queue simple
+:set traf [get [find name="test"] total-bytes]  
+:if ($traf < 100000) do={set [find name="test"] limit-at="4000k/4000k" max-limit="80000k/80000k"  burst-limit="0k/0k" burst-threshold="0k/0k" burst-time="0s/0s"  priority="1"}
+ :if ($traf > 10000000) do={set [find name="test"] limit-at="220k/220k" max-limit="10000k/10000k" burst-limit="0k/0k" burst-threshold="0k/0k" burst-time="0s/0s" priority="2"} 
+ :if ($traf > 15000000) do={set [find name="test"]  limit-at="180k/180k" max-limit="250k/1480k" burst-limit="0k/0k" burst-threshold="0k/0k" burst-time="0s/0s" priority="4"}}

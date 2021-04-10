@@ -1,0 +1,32 @@
+# script tx-power set at 3 dbi at night and day 30 dbi, 
+
+Scripts below:
+
+
+
+/system script add name="WLAN" source= {
+	:local lowpower 3;
+	:local power 30;
+ :local time [ /system clock  get time ] ;
+
+	/interface wireless
+:if ($time > 22:00) do={ :put [ set wlan0-main tx-power=$lowpower ] }
+:if ($time > 00:00) do={ :put [ set wlan0-main tx-power=$lowpower ] }
+:if ($time > 07:00) do={ :put [ set wlan0-main tx-power=$power ]  }
+}
+
+:delay 1s 
+
+{
+ :global script [ /system script get [find name="WLAN"] name]
+ :if ($script = $script) do={:put [/system scheduler add name="$script tx-power" interval="00:55:00" on-event=" 
+/system script run $script"]}
+} 
+
+
+
+
+
+
+
+# Click ENTER load scripts in terminal

@@ -1,0 +1,11 @@
+ # Konfiguracja
+:local wanInterface "pppoe-WAN";
+:local hostname "pi.ddns.net";
+:local username "";
+:local password "";
+
+# Skrypt
+:local publicIP [/ip address get [find interface=$wanInterface] address];
+:set publicIP [:pick $publicIP 0 [:find $publicIP "/"]];
+/tool fetch url="http://dynupdate.no-ip.com/nic/update?hostname=$hostname&myip=$publicIP" user=$username password=$password keep-result=no;
+:delay 10s;
