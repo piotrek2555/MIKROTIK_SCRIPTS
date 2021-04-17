@@ -1,4 +1,4 @@
- # Konfiguracja
+ # Konfiguracja no-ip
 :local wanInterface "";
 :local hostname "";
 :local username "";
