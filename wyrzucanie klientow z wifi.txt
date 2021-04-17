@@ -1,4 +1,4 @@
-//JEST TO PROSTY SKRYPT, który po wykryciu klienta o danym mac na access-list przez uptime 5 sek.,  robi akcje zapisan¹ jako do
+#JEST TO PROSTY SKRYPT, ktÃ³ry po wykryciu klienta o danym mac na access-list przez uptime 5 sek,  robi akcje zapisana jako do:
 
 :local fin [/interface wireless registration-table get [ find mac-address=00:D0:27:00:64:D1] uptime ] ;
- :if ($fin > 00:00:05) do={[/interface wireless disable wlan0-main] }
+ :if ($fin > 00:00:05) do={[/interface wireless disable wlan0-main] } 
