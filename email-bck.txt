@@ -17,4 +17,4 @@
 :do {
  [ /system backup save dont-encrypt=yes name="bck-$dev-$time" ]
 :delay 10s; 
-[/tool e-mail send subject="bck-$dev-$days"  to="$email"  file="bck-$dev-$time.backup" password="$haslo" user="$username" body="backup-konfiguracji urzadzenia:$dev dnia:$days . Wersja : $ver" ] } }
+[/tool e-mail send subject="bck-$dev-$days"  to="$email"  file="bck-$dev-$time.backup" password="$haslo" user="$username" body="backup-konfiguracji urzadzenia:$dev dnia:$days . Wersja : $ver" ] } } 
