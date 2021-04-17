@@ -24,3 +24,4 @@ local ch [ /interface wireless get 0 disabled]
 :if ($stan = no ) do={ [/interface wireless enable [find name="$wl5"] ] }
 
 
+ 
