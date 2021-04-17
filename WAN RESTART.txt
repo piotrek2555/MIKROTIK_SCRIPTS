@@ -1,14 +1,16 @@
-#ustawienia
+#ustawienia 
 
 :local int "^.+(WAN).*\$"
 
 #action
+
 :do {
  [/interface ethernet disable [find name~"$int" ] ]
 
 }
 
 #time delay
+
 :delay 10s;
 
 :do {
