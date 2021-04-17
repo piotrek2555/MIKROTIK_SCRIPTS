@@ -20,4 +20,4 @@
  :global script [ /system script get [find name="NAT"] name]
  :if ($script = $script) do={:put [/system scheduler add name="$script NAT" interval="00:25:00" on-event=" 
 /system script run $script"]}
-} 
+}
