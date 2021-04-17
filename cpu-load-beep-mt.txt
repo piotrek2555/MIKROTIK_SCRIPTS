@@ -1,2 +1,4 @@
+#beeper ponad 90 CPU
+
 :local cpu [/system resource get cpu-load]; 
-:if ($cpu > 90 ) do={[:beep]}
+:if ($cpu > 90 ) do={[:beep]} 
