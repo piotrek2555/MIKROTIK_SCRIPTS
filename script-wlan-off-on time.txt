@@ -19,5 +19,5 @@
 
 :if (($check = no ) && ($stop < $zeg )  && ( $start > $zeg )  ) do={
 [ /interface wireless disable $i ] 
-
+ 
 } }
