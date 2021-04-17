@@ -1,10 +1,27 @@
 # MIKROTIK_SCRIPT
 ///////
-Switch LEDS- Przełączanie ledów.
+Switch LEDS:- Przełączanie ledów.
+
+
+
+
 ///////
-Script wlan-off-on-time - W określonych godzinach wlącza i wylącza wifi.
+
+
+
+Script wlan-off-on-time: - W określonych godzinach wlącza i wylącza wifi.
+
+
+
+
+
 ///////
-<b>Arp-dynamic-mac-qos</b> / Zmiana dynamiczna kolejki qos w routerze MIkrotik, na podstawie adresu mac wyciągniętego z tablicy ARP.
+
+
+
+
+
+<b>Arp-dynamic-mac-qos:</b> / Zmiana dynamiczna kolejki qos w routerze MIkrotik, na podstawie adresu mac wyciągniętego z tablicy ARP.
 
 Przydatne do qos po mac adresie.
 Nawet jak host zmieni adres ip to i tak nie obejdzie limitu prędkości.
@@ -13,10 +30,28 @@ Można dodać arp-reply, by zablokować cały internet po zmianie adresu IP L3. 
 
 /////////
 
-WAN RESTART  -Restart wan na 10s, czyli zmiana ip dynamicznego. Wykrywanie interfejsu za pomocą ~ regexp . Działa z jednym interfejsem wan 
+
+
+
+
+WAN RESTART:  -Restart wan na 10s, czyli zmiana ip dynamicznego. Wykrywanie interfejsu za pomocą ~ regexp . Działa z jednym interfejsem wan 
+
+
+
+
 
 ////////
-EMAIL-BCK / #ustawienia tutaj pomiędzy "" wpisać swoje dane.
+
+
+
+
+
+
+
+
+
+
+EMAIL-BCK: / #ustawienia tutaj pomiędzy "" wpisać swoje dane.
 
 :local username "username"
 :local email "email"
@@ -35,6 +70,10 @@ Wysyła także wersje systemu w e-mailu /
 
 
 //////
+
+
+
+
 wlan-off-on:
 
 
@@ -45,7 +84,17 @@ Sprawdza int 2.4 jeżeli jest wyłączony do go wlącza, ale interfejs 5Ghz tak�
 Jeżeli jest włączony interfejs 2.4 to go wyłącza, ale także wyłącza 5ghz 
 
 
+
+
+
+
+
 /////////////
+
+
+
+
+
 
 
 ddns.TXT ver.1: - Skrypt DDNS no-ip
@@ -54,8 +103,21 @@ DDNS-NO.IP
 Działa z usługą VPN IPSEC, IKEv2 
 
 
+
+
+
+
+
+
+
 //////////////////////////
-QOS-QUOTA -Skrypt działa w wersji ROS. 6.x //
+
+
+
+
+
+
+QOS-QUOTA: -Skrypt działa w wersji ROS. 6.x //
 
 Skrypt limituje prędkość po przekroczeniu 10 mb na kolejcie test do 256k około. Więcej w dokumentacji w środku skryptu.
 
@@ -70,7 +132,18 @@ w on event wpisać :
 /system script run [find name="Limit-test"] /////////
 
 
+
+
+
+
+
+
 /////////////
+
+
+
+
+
 tx-power : Skrypt zmiejszający moc tx-power karty WLAN w godzinach od 22 do 07 na 3 dbi a potem zwiększający na 30 dbi
 
 Karta Wlan nazwa: wlan0-main
@@ -81,12 +154,23 @@ ustawienie 55 minut sprawdzania
 
 Skrypt:WLAN
 
-Wkleić do termianala w WINBOX /////
+Wkleić do termianala w WINBOX 
 
-DDNS ver.2  NOIP.com ///
+
+
+
+
+/////
+
+
+
+
+DDNS ver.2  NOIP.com: ///
 
 
 Zmienia tylko WTEDY go ip w DDNS 
 :if ($newIP =! $CurrentIP ) do={...} else={...} / Zapisuje w logach INFO.
 
 Działa z  VPN  
+
+///////////////////////////////////////////
