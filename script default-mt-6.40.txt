@@ -33,7 +33,7 @@
                     :if ($count = 30) do={
                     :log warning "DefConf: Unable to find ethernet interfaces";
                     /quit;
-                    }
+                    } 
                     :delay 1s; :set count ($count +1); 
                     };
                     
