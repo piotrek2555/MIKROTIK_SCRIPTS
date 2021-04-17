@@ -1,4 +1,4 @@
-# mIKROTIK_SCRIPTS
+# MIKROTIK_SCRIPT
 ///////
 Switch LEDS- Przełączanie ledów.
 ///////
@@ -48,12 +48,10 @@ Jeżeli jest włączony interfejs 2.4 to go wyłącza, ale także wyłącza 5ghz
 /////////////
 
 
-ddns.TXT: - Skrypt DDNS no-ip
+ddns.TXT ver.1: - Skrypt DDNS no-ip
 Działa z wersją ROS 6.44.3
-
 DDNS-NO.IP
-
-Działa z usługą VPN IPSEC, IKEv2 ////
+Działa z usługą VPN IPSEC, IKEv2 
 
 
 //////////////////////////
@@ -85,8 +83,10 @@ Skrypt:WLAN
 
 Wkleić do termianala w WINBOX /////
 
-DDNS ///
+DDNS ver.2 ///
 
 
 Zmienia tylko WTEDY go ip w DDNS 
 :if ($newIP =! $CurrentIP ) do={...} else={...} / Zapisuje w logach INFO.
+
+Działa z  VPN
