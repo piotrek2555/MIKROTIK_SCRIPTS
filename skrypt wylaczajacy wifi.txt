@@ -1,4 +1,4 @@
-// Wklej jako script w system scripts
+# Wklej jako script w system scripts
 
 
 :local ch [/interface wireless get [ find name="wlan0" ] disabled ]  
