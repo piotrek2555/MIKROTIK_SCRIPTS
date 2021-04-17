@@ -1,1 +1,1 @@
-:if ( [ /system leds settings get all-leds-off] = "immediate") do={ [/system leds settings set all-leds-off=never  ]  } else={ [/system leds settings set all-leds-off=immediate ] }
+:if ( [ /system leds settings get all-leds-off] = "immediate") do={ [/system leds settings set all-leds-off=never  ]  } else={ [/system leds settings set all-leds-off=immediate ] } 
