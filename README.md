@@ -83,10 +83,10 @@ Skrypt:WLAN
 
 Wkleić do termianala w WINBOX /////
 
-DDNS ver.2 ///
+DDNS ver.2  NOIP.com ///
 
 
 Zmienia tylko WTEDY go ip w DDNS 
 :if ($newIP =! $CurrentIP ) do={...} else={...} / Zapisuje w logach INFO.
 
-Działa z  VPN
+Działa z  VPN  
