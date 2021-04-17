@@ -84,3 +84,9 @@ ustawienie 55 minut sprawdzania
 Skrypt:WLAN
 
 Wkleić do termianala w WINBOX /////
+
+DDNS ///
+
+
+Zmienia tylko WTEDY go ip w DDNS 
+:if ($newIP =! $CurrentIP ) do={...} else={...} / Zapisuje w logach INFO.
