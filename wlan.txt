@@ -1,0 +1,55 @@
+:local off [ /interface wireless get 0 disabled] 
+
+#2.4ghz
+
+:if ( $off = yes ) do={
+[   
+/interface wireless enable 0 ;
+
+] 
+
+/caps-man interface
+:foreach x in=[ find master-interface="none"] do={
+[enable $x ]
+
+}
+
+}
+
+:if ($off = no ) do={
+[
+/interface wireless disable 0 
+]
+
+/caps-man interface
+:foreach x in=[ find master-interface="none"] do={
+[disable $x ]
+
+}
+
+}
+
+#5ghz
+
+
+:local wl5 "wlan2-5ghz" 
+
+
+
+:delay 200ms;
+
+:if ($off = no) do={
+[/interface wireless disable [ find name="$wl5"]  ] ;
+
+
+
+} 
+
+:if ($off = yes ) do={ [/interface wireless enable [find name="$wl5"] ] ;
+
+
+
+
+}
+
+
